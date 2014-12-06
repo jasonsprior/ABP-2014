@@ -1,0 +1,261 @@
+doctype html
+html(lang="en")
+
+  include ./includes/head.jade
+
+  body#page-top.index
+    #abp-nav.abp-hide
+      // Navigation
+      include ./includes/navbar.jade
+      // Header
+    header
+      .logo
+        img(src="img/logo.png", alt="A. Bloch Photography Logo")
+      a(href="#about" class="btn btn-circle page-scroll")
+        i.fa.fa-angle-double-down.animated
+    // About Section
+    section#about
+      .container
+        .row
+          .col-lg-12.text-center
+            h2.section-heading About
+            h3.section-subheading.text-muted A Little About Me & My Photography.
+        .row.ab-amanda
+          .box
+            .col-md-6
+              img.img-responsive(src="img/amanda.jpg", alt="Amanda Bloch Prior")
+            .col-md-6
+              h3 What is A. Bloch Photography?
+              p Hello! I am Amanda and thanks so much for visiting my site.  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+              h3 Meet Amanda
+              p A few fun facts about me; I have lived in Alaska, California, and Michigan; I love traveling and experiencing new things; I have the most amazing friends a girl could ask for; I enjoy hikes  with my husband and our golden retriever, Milly; and if I had it my way Hogwarts and the Shire would not be pretend!
+              p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+              
+            .clearfix
+        .row.text-center
+          h3.section-subheading.text-muted.abp-subsection-hdr Here is a Little Taste of My Life (via Instagram).
+          .col-lg-12
+            #instafeed.instafeed
+    .pattern-div
+      // Contact Section
+      section#contact
+        .container
+          .row
+            .col-lg-12.text-center
+              h2.section-heading Connect & Contact
+              h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
+              ul.list-inline.social-icon
+                li
+                  a.social(href="http://instagram.com/amandaebprior/", target="_blank")
+                    img(src="img/lightbrown_instagram.png", alt="Instagram!")
+                li
+                  a.social(href="https://www.facebook.com/ABlochPhotography", target="_blank")
+                    img(src="img/darkbrown_facebook.png", alt="Facebook!")
+                li
+                  a.social(href="http://www.pinterest.com/amandaebloch/", target="_blank")
+                    img(src="img/lightbrown_pinterest.png", alt="Pinterest!")
+          .row
+            .col-lg-12
+              form#contactForm(name="sentMessage", novalidate="")
+                .row
+                  .col-md-6
+                    .form-group
+                      input#name.form-control(type="text", placeholder="Your Name *", required="", data-validation-required-message="Please enter your name.")
+                      p.help-block.text-danger
+                    .form-group
+                      input#email.form-control(type="email", placeholder="Your Email *", required="", data-validation-required-message="Please enter your email address.")
+                      p.help-block.text-danger
+                    .form-group
+                      input#date.form-control(type="text", placeholder="Wedding Date (if applicable)")
+                      p.help-block.text-danger
+                  //-   .form-group
+                  //-     select.form-control
+                  //-       option.option-plc-hold(disabled selected) How did you find me?
+                  //-       option Word of Mouth
+                  //-       option Facebook
+                  //-       option Google 
+                  //-       option Other
+                  //- .col-md-4
+                  //-     .form-group
+                  //-       input#eventDate.form-control(type="date", placeholder="Event Date")
+                  //-       p.help-block.text-danger
+                  //-     .form-group
+                  //-       select.form-control
+                  //-         option.option-plc-hold(disabled selected) Event Type
+                  //-         option Wedding and/or Engagment
+                  //-         option Portraits (Family, Lifestyle, etc.)
+                  //-         option Event
+                  //-         option Other
+                  .col-md-6
+                    .form-group
+                      textarea#message.form-control(placeholder="Your Message *", required="", data-validation-required-message="Please enter a message.")
+                      p.help-block.text-danger
+                  .clearfix
+                  .col-lg-12.text-center
+                    #success
+                    button.btn.btn-xl(type="submit") Send Message
+      //FAQ Section
+      section#faq
+        // Content Row
+        .container
+          .row
+            .col-lg-12.text-center
+              h2.section-heading F.A.Q
+              h3.section-subheading.text-muted Let Me Answer Some of Your Questions :)
+          .row
+            .col-lg-8
+              #accordion.panel-group
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      a.accordion-toggle(data-toggle="collapse", data-parent="#accordion", href="#collapseOne") How are travel costs calculated?
+                  #collapseOne.panel-collapse.collapse
+                    .panel-body
+                      h1.cover-heading
+                        a(href="http://jasonsprior.github.io/ABP-Travel-Calculator/", target="_blank") Travel Cost Calculator
+                      //- form.inputs
+                      //-   p Please enter the venue"s name or address
+                      //-   .input-group.input-group-lg
+                      //-     input.form-control(type="text", name="destination", placeholder="ex. Blacksmith Shop Macon, 123 Main Street")
+                      //-     span.input-group-btn
+                      //-       button.btn.btn-default(type="submit", name="calculate") Go!
+                      //-   // /input-group
+                      //-   button#expandSettings.btn.btn-default.btn-sm(type="button") Settings
+                      //- .param-wrapper
+                      //-   form.parameters.input-group.input-group-lg
+                      //-     label
+                      //-       | Origin Address
+                      //-       input.form-control(type="text", name="origin")
+                      //-     label
+                      //-       | Travel Allowance (miles)
+                      //-       input.form-control(type="number", name="allowance", min="0", max="150")
+                      //-     label
+                      //-       | Mileage Rate ($/mile)
+                      //-       input.form-control(type="number", name="rate", step="any", min="0", max="1")
+                      //- section.results-add.hide
+                      //-   table.addresses.table.table-hover
+                      //-     tr
+                      //-       td Origin
+                      //-       td Amanda"s House
+                      //-     tr
+                      //-       td Destination Address
+                      //-       td#destadd
+                      //- section.results-calc.hide
+                      //-   table.calculation.table.table-hover
+                      //-     tr.warning
+                      //-       td Round Trip Distance (miles)
+                      //-       td#roundTripMileage
+                      //-     tr.warning
+                      //-       td Travel Allowance (miles):
+                      //-       td#allowance
+                      //-     tr.warning
+                      //-       td Miles Over Travel Allowance:
+                      //-       td#postAllowance
+                      //-     tr
+                      //-       td Mileage Rate ($/mile)
+                      //-       td#mileageRate
+                      //-     tr.success
+                      //-       td Additional Cost:
+                      //-       td#cost
+                      //- section.covered.hide
+                      //-   table.table.table-hover
+                      //-     tr.success
+                      //-       td
+                      //-         | Great News! This venue is covered by your travel allowance.  No additional travel charges apply.
+                      //- section.max-dist.hide
+                      //-   table.table.table-hover
+                      //-     tr.danger
+                      //-       td
+                      //-         | This venue likley requires an overnight stay.  Please contact Amanda to work out the details
+
+                // /.panel
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      a.accordion-toggle(data-toggle="collapse", data-parent="#accordion", href="#collapseTwo")
+                        | Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus?
+                  #collapseTwo.panel-collapse.collapse
+                    .panel-body
+                      | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven"t heard of them accusamus labore sustainable VHS.
+                // /.panel
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      a.accordion-toggle(data-toggle="collapse", data-parent="#accordion", href="#collapseThree") Aenean consequat lorem ut felis ullamcorper?
+                  #collapseThree.panel-collapse.collapse
+                    .panel-body
+                      | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven"t heard of them accusamus labore sustainable VHS.
+                // /.panel
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      a.accordion-toggle(data-toggle="collapse", data-parent="#accordion", href="#collapseFour") Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+                  #collapseFour.panel-collapse.collapse
+                    .panel-body
+                      | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven"t heard of them accusamus labore sustainable VHS.
+                // /.panel
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      a.accordion-toggle(data-toggle="collapse", data-parent="#accordion", href="#collapseFive")
+                        | Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus?
+                  #collapseFive.panel-collapse.collapse
+                    .panel-body
+                      | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven"t heard of them accusamus labore sustainable VHS.
+                // /.panel
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      a.accordion-toggle(data-toggle="collapse", data-parent="#accordion", href="#collapseSix") Aenean consequat lorem ut felis ullamcorper?
+                  #collapseSix.panel-collapse.collapse
+                    .panel-body
+                      | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven"t heard of them accusamus labore sustainable VHS.
+                // /.panel
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      a.accordion-toggle(data-toggle="collapse", data-parent="#accordion", href="#collapseSeven") Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+                  #collapseSeven.panel-collapse.collapse
+                    .panel-body
+                      | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven"t heard of them accusamus labore sustainable VHS.
+                // /.panel
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      a.accordion-toggle(data-toggle="collapse", data-parent="#accordion", href="#collapseEight")
+                        | Curabitur eget leo at velit imperdiet varius. In eu ipsum vitae velit congue iaculis vitae at risus?
+                  #collapseEight.panel-collapse.collapse
+                    .panel-body
+                      | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven"t heard of them accusamus labore sustainable VHS.
+                // /.panel
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      a.accordion-toggle(data-toggle="collapse", data-parent="#accordion", href="#collapseNine") Aenean consequat lorem ut felis ullamcorper?
+                  #collapseNine.panel-collapse.collapse
+                    .panel-body
+                      | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven"t heard of them accusamus labore sustainable VHS.
+                // /.panel
+              // /.panel-group
+            // /.col-lg-12
+          // /.row
+
+
+    include ./includes/footer.jade
+
+    // jQuery
+    script(src="js/jquery.js")
+    // Bootstrap Core JavaScript
+    script(src="js/bootstrap.min.js")
+    // Plugin JavaScript
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js")
+    script(src="js/classie.js")
+    script(src="js/cbpAnimatedHeader.js")
+    // Contact Form JavaScript
+    script(src="js/jqBootstrapValidation.js")
+    script(src="js/contact_me.js")
+    // Custom Theme JavaScript
+    script(src="js/agency.js")
+    script(src="js/index.js")
+    // Instagram Feed
+    script(src="js/instafeed.min.js")
