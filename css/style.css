@@ -140,6 +140,13 @@ nav {
     display: none;
   }
 }
+@media (min-width: 1200px) {
+  #faq .col-lg-8 {
+    display: block;
+    margin: auto;
+    float: none;
+  }
+}
 .social-icon {
   margin-bottom: 75px;
 }
