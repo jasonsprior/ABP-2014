@@ -10,24 +10,45 @@ $(function() {
             // get values from FORM
             var name = $("input#name").val();
             var email = $("input#email").val();
-            var phone = $("input#phone").val();
+            var date = $("input#date").val();
             var message = $("textarea#message").val();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
-            $.ajax({
-                url: "././mail/contact_me.php",
-                type: "POST",
-                data: {
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    message: message
-                },
-                cache: false,
-                success: function() {
+
+            // var c_date = new Date();
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth()+1; //January is 0!
+            var yyyy = today.getFullYear();
+            var fullDate = yyyy+"-"+mm+"-"+dd;
+            console.log(fullDate);
+            // console.log("c_date =" ,c_date);
+
+            var formSubmission = new Firebase("https://proof-of-concept.firebaseio.com/");
+
+            var submissionRef = formSubmission.child(fullDate+" - "+ name);
+            submissionRef.set({
+                name: name,
+                email: email,
+                date: date,
+                msg: message
+                });
+            console.log(submissionRef);
+
+            // $.ajax({
+            //     url: "././mail/contact_me.php",
+            //     type: "POST",
+            //     data: {
+            //         name: name,
+            //         phone: phone,
+            //         email: email,
+            //         message: message
+            //     },
+            //     cache: false,
+            //     success: function() {
                     // Success message
                     $('#success').html("<div class='alert alert-success'>");
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
@@ -39,18 +60,18 @@ $(function() {
 
                     //clear all fields
                     $('#contactForm').trigger("reset");
-                },
-                error: function() {
-                    // Fail message
-                    $('#success').html("<div class='alert alert-danger'>");
-                    $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
-                        .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
-                    $('#success > .alert-danger').append('</div>');
-                    //clear all fields
-                    $('#contactForm').trigger("reset");
-                },
-            })
+                // },
+                // error: function() {
+                //     // Fail message
+                //     $('#success').html("<div class='alert alert-danger'>");
+                //     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                //         .append("</button>");
+                //     $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
+                //     $('#success > .alert-danger').append('</div>');
+                //     //clear all fields
+                //     $('#contactForm').trigger("reset");
+                // },
+            // })
         },
         filter: function() {
             return $(this).is(":visible");
