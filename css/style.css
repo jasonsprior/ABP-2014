@@ -162,3 +162,10 @@ nav {
 #faq h3 {
   color: white;
 }
+.travel-calc section {
+  padding: 5px 0;
+}
+.travel-calc .form-control,
+.travel-calc .input-group-btn > .btn {
+  font-size: 14px;
+}

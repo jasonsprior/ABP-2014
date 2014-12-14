@@ -110,64 +110,83 @@ html(lang="en")
                     h4.panel-title
                       a.accordion-toggle(data-toggle="collapse", data-parent="#accordion", href="#collapseOne") How are travel costs calculated?
                   #collapseOne.panel-collapse.collapse
-                    .panel-body
-                      h1.cover-heading
-                        a(href="http://jasonsprior.github.io/ABP-Travel-Calculator/", target="_blank") Travel Cost Calculator
-                      //- form.inputs
-                      //-   p Please enter the venue"s name or address
-                      //-   .input-group.input-group-lg
-                      //-     input.form-control(type="text", name="destination", placeholder="ex. Blacksmith Shop Macon, 123 Main Street")
-                      //-     span.input-group-btn
-                      //-       button.btn.btn-default(type="submit", name="calculate") Go!
-                      //-   // /input-group
-                      //-   button#expandSettings.btn.btn-default.btn-sm(type="button") Settings
-                      //- .param-wrapper
-                      //-   form.parameters.input-group.input-group-lg
-                      //-     label
-                      //-       | Origin Address
-                      //-       input.form-control(type="text", name="origin")
-                      //-     label
-                      //-       | Travel Allowance (miles)
-                      //-       input.form-control(type="number", name="allowance", min="0", max="150")
-                      //-     label
-                      //-       | Mileage Rate ($/mile)
-                      //-       input.form-control(type="number", name="rate", step="any", min="0", max="1")
-                      //- section.results-add.hide
-                      //-   table.addresses.table.table-hover
-                      //-     tr
-                      //-       td Origin
-                      //-       td Amanda"s House
-                      //-     tr
-                      //-       td Destination Address
-                      //-       td#destadd
-                      //- section.results-calc.hide
-                      //-   table.calculation.table.table-hover
-                      //-     tr.warning
-                      //-       td Round Trip Distance (miles)
-                      //-       td#roundTripMileage
-                      //-     tr.warning
-                      //-       td Travel Allowance (miles):
-                      //-       td#allowance
-                      //-     tr.warning
-                      //-       td Miles Over Travel Allowance:
-                      //-       td#postAllowance
-                      //-     tr
-                      //-       td Mileage Rate ($/mile)
-                      //-       td#mileageRate
-                      //-     tr.success
-                      //-       td Additional Cost:
-                      //-       td#cost
-                      //- section.covered.hide
-                      //-   table.table.table-hover
-                      //-     tr.success
-                      //-       td
-                      //-         | Great News! This venue is covered by your travel allowance.  No additional travel charges apply.
-                      //- section.max-dist.hide
-                      //-   table.table.table-hover
-                      //-     tr.danger
-                      //-       td
-                      //-         | This venue likley requires an overnight stay.  Please contact Amanda to work out the details
-
+                    .panel-body.travel-calc
+                        h2 Travel Cost Calculator              
+                        form.inputs
+                          p Please enter the locations&apos;s name or address
+                          |                     
+                          .input-group.input-group-lg
+                            input.form-control(type='text', name='destination', placeholder='ex. The Georgia Aquarium or 123 Main Street')
+                            |                         
+                            span.input-group-btn
+                              button.btn.btn-default(type='submit', name='calculate') Go!
+                          // /input-group
+                          //- button#expandSettings.btn.btn-default.btn-sm(type='button') Settings             
+                        .param-wrapper.hide
+                          form.parameters.input-group.input-group-lg
+                            label
+                              | Origin Address
+                              input.form-control(type='text', name='origin')
+                            |                         
+                            label
+                              | Travel Allowance (miles)
+                              input.form-control(type='number', name='allowance', min='0', max='150')
+                            |                         
+                            label
+                              | Mileage Rate ($/mile)
+                              input.form-control(type='number', name='rate', step='any', min='0', max='1')
+                        |         
+                        |                 
+                        section.results-add.hide
+                          table.addresses.table.table-hover
+                            tr
+                              td Origin
+                              |                             
+                              td Amanda&apos;s House
+                            |                         
+                            tr
+                              td Destination Address
+                              |                             
+                              td#destadd
+                        |                 
+                        section.results-calc.hide
+                          table.calculation.table.table-hover
+                            tr.warning
+                              td Round Trip Distance (miles)
+                              |                             
+                              td#roundTripMileage
+                            |                        
+                            tr.warning
+                              td Travel Allowance (miles):
+                              |                             
+                              td#allowance
+                            |                         
+                            tr.warning
+                              td Miles Over Travel Allowance:
+                              |                             
+                              td#postAllowance
+                            |                         
+                            tr
+                              td Mileage Rate ($/mile)
+                              |                             
+                              td#mileageRate
+                            |                         
+                            tr.success
+                              td Additional Cost:
+                              |                             
+                              td#cost
+                        |                 
+                        section.covered.hide
+                          table.table.table-hover
+                            tr.success
+                              td
+                                | Great News! This location is covered by your travel allowance.  No additional travel charges apply.
+                        |                 
+                        section.max-dist.hide
+                          table.table.table-hover
+                            tr.danger
+                              td
+                                | This location likley requires an overnight stay.  Please contact Amanda to work out the details
                 // /.panel
                 .panel.panel-default
                   .panel-heading
@@ -261,3 +280,7 @@ html(lang="en")
     script(src="js/instafeed.min.js")
     //Firebase for form data
     script(src='https://cdn.firebase.com/js/client/2.0.4/firebase.js')
+    //Google Distance Matrix
+    script(src='https://maps.googleapis.com/maps/api/js?v=3.exp')
+    //Travel Calculator
+    script(src='js/travelcalculator.js')

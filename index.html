@@ -150,8 +150,80 @@
                     <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="accordion-toggle">How are travel costs calculated?</a></h4>
                   </div>
                   <div id="collapseOne" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      <h1 class="cover-heading"><a href="http://jasonsprior.github.io/ABP-Travel-Calculator/" target="_blank">Travel Cost Calculator</a></h1>
+                    <div class="panel-body travel-calc">
+                      <h2>Travel Cost Calculator              </h2>
+                      <form class="inputs">
+                        <p>Please enter the locations&apos;s name or address</p>                    
+                        <div class="input-group input-group-lg">
+                          <input type="text" name="destination" placeholder="ex. The Georgia Aquarium or 123 Main Street" class="form-control">                        <span class="input-group-btn">
+                            <button type="submit" name="calculate" class="btn btn-default">Go!</button></span>
+                        </div>
+                        <!-- /input-group-->
+                      </form>
+                      <div class="param-wrapper hide">
+                        <form class="parameters input-group input-group-lg">
+                          <label>Origin Address
+                            <input type="text" name="origin" class="form-control">
+                          </label>                        
+                          <label>Travel Allowance (miles)
+                            <input type="number" name="allowance" min="0" max="150" class="form-control">
+                          </label>                        
+                          <label>Mileage Rate ($/mile)
+                            <input type="number" name="rate" step="any" min="0" max="1" class="form-control">
+                          </label>
+                        </form>
+                      </div>        
+                                      
+                      <section class="results-add hide">
+                        <table class="addresses table table-hover">
+                          <tr>
+                            <td>Origin</td>                            
+                            <td>Amanda&apos;s House</td>
+                          </tr>                        
+                          <tr>
+                            <td>Destination Address</td>                            
+                            <td id="destadd"></td>
+                          </tr>
+                        </table>
+                      </section>                
+                      <section class="results-calc hide">
+                        <table class="calculation table table-hover">
+                          <tr class="warning">
+                            <td>Round Trip Distance (miles)</td>                            
+                            <td id="roundTripMileage"></td>
+                          </tr>                       
+                          <tr class="warning">
+                            <td>Travel Allowance (miles):</td>                            
+                            <td id="allowance"></td>
+                          </tr>                        
+                          <tr class="warning">
+                            <td>Miles Over Travel Allowance:</td>                            
+                            <td id="postAllowance"></td>
+                          </tr>                        
+                          <tr>
+                            <td>Mileage Rate ($/mile)</td>                            
+                            <td id="mileageRate"></td>
+                          </tr>                        
+                          <tr class="success">
+                            <td>Additional Cost:</td>                            
+                            <td id="cost"></td>
+                          </tr>
+                        </table>
+                      </section>                
+                      <section class="covered hide">
+                        <table class="table table-hover">
+                          <tr class="success">
+                            <td>Great News! This location is covered by your travel allowance.  No additional travel charges apply.</td>
+                          </tr>
+                        </table>
+                      </section>                
+                      <section class="max-dist hide">
+                        <table class="table table-hover">
+                          <tr class="danger">
+                            <td>This location likley requires an overnight stay.  Please contact Amanda to work out the details</td>
+                          </tr>
+                        </table>
+                      </section>
                     </div>
                   </div>
                 </div>
@@ -270,5 +342,9 @@
     <script src="js/instafeed.min.js"></script>
     <!--Firebase for form data-->
     <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+    <!--Google Distance Matrix-->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <!--Travel Calculator-->
+    <script src="js/travelcalculator.js"></script>
   </body>
 </html>
