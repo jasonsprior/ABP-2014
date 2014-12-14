@@ -158,8 +158,8 @@ nav {
   -o-background-size: cover;
   background-size: cover;
 }
-#faq h2,
-#faq h3 {
+#faq .section-heading,
+#faq .section-subheading {
   color: white;
 }
 .travel-calc section {
