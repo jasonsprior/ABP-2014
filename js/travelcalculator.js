@@ -5,7 +5,6 @@ $(document).ready(function() {
     $('input[name=allowance]').val("60");
     $('input[name=rate]').val(".55");
 
-    // userFeed.run();
     $('form.inputs').submit(getDistance);
     $('#expandSettings').click(toggleSettings)
 
